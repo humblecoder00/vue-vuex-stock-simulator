@@ -69,19 +69,19 @@ Technologies used:
 
 # How to
 
-# install dependencies
+### Install dependencies
 
 npm install
 
-# serve with hot reload at localhost:8080
+### Serve with hot reload at localhost:8080
 
 npm run dev
 
-# build for production with minification
+### Build for production with minification
 
 npm run build
 
-# use your own firebase database
+### Use your own firebase database
 
 -   Create a realtime database at Fireship.
 -   Create an `.env` file at root level, then place your database url following the example at `.env.example`.
