@@ -17,7 +17,7 @@ Serverless single-page application that simulates stock trading.
 -   You can save and load your current stocks portfolio and stock prices at any point of time.
 -   You can also use `"Reset to Default"` to set everything to the initial start point. `(extended addition)`
 
-Technologies used:
+### Technologies used:
 
 -   Vue.js 2.0 + Vuex
 -   Axios for handling HTTP `(extended addition)`
