@@ -75,7 +75,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
                 ignore: ['.*'],
             },
         ]),
-        new Dotenv(),
+        new Dotenv({
+            systemvars: true,
+        }),
     ],
 })
 
