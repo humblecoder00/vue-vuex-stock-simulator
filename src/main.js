@@ -17,6 +17,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
+import AxiosPlugin from 'vue-axios-cors'
 
 import App from './App.vue'
 // import { routes } from './routes'
@@ -26,6 +27,7 @@ import { store } from './store/store'
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(AxiosPlugin)
 Vue.prototype.$http = axios
 
 const router = new VueRouter({

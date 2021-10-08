@@ -13,6 +13,7 @@
     "axios": "^0.22.0",
     "vue": "^2.5.2",
     "vue-axios": "^3.3.7",
+    "vue-axios-cors": "^1.0.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.6.2"
   },
