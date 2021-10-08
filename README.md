@@ -1,4 +1,4 @@
-# Vuex stock trading simulator
+# Vue & Vuex stock trading simulator
 
 Extended version of the exercise project `stock-trader` from `Vue JS 2 - The Complete Guide` course made by Maximilian Schwarzmüller.
 
@@ -39,6 +39,15 @@ Technologies used:
 │   ├   ├─── LoaderSquare.vue
 │   ├   ├─── ....
 │   ├── lib  # contains common utilities used overall the app
+│   ├── pages  # PAGES - contains views (pages)
+│   ├   ├─── stocks # (contains page specific container + components)
+│   ├   ├        ├─── components # holds ONLY page specific components
+│   ├   ├        ├        ├─── StockBuyComponent.vue # page scoped component
+│   ├   ├        ├        ├─── ........
+│   ├   ├        ├─── Stocks.vue # container component (PAGE)
+│   ├   ├─── ........
+│   ├── services  # contains global level services that can be used overall the app, (example: axios)
+│   ├   ├─── api-axios-instance.js # main axios instance
 │   ├── store  # contains Vuex
 │   ├   ├─── feature-stocks # (or any vuex feature that has a state)
 │   ├   ├        ├─── actions.js # contains actions, imports api calls from services.js
@@ -49,24 +58,12 @@ Technologies used:
 │   ├   ├        ├─── index.js # exports the feature to main store & includes piece of state scoped to feature
 │   ├   ├─── .......
 │   ├   ├─── index.js  # contains & exports Vuex instance with features
-│   ├── pages  # PAGES - contains views (pages)
-│   ├   ├─── stocks # (contains page specific container + components)
-│   ├   ├        ├─── components # holds ONLY page specific components
-│   ├   ├        ├        ├─── StockBuyComponent.vue # page scoped component
-│   ├   ├        ├        ├─── ........
-│   ├   ├        ├─── Stocks.vue # container component (PAGE)
-│   ├   ├─── ........
-│   ├── services  # contains global level services that can be used overall the app, (example: axios)
-│   ├   ├─── api-axios-instance.js # main axios instance
 │   ├── App.vue
 │   ├── main.js # main Vue instance
 │   ├── router.js # holds router information
-├── .babelrc # contains Babel settings
 ├── .env # contains environment secrets
 ├── .env.example # contains .env example
-├── .gitignore
 ├── index.html # App entry point
-├── .webpack.config.js # contains Webpack settings
 └── .....
 ```
 
