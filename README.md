@@ -2,6 +2,10 @@
 
 Extended version of the exercise project `stock-trader` from `Vue JS 2 - The Complete Guide` course made by Maximilian Schwarzmüller.
 
+### Live version:
+
+https://vue-vuex-stock-simulator.netlify.app/
+
 ### Description:
 
 Serverless single-page application that simulates stock trading.
