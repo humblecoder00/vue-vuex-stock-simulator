@@ -1,23 +1,77 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div class="container">
+        <router-view name="header-top"></router-view>
+        <loader-square v-if="isLoading && !isError"></loader-square>
+        <transition name="slide" mode="out-in">
+            <router-view></router-view>
+        </transition>
+    </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import LoaderSquare from './components/LoaderSquare.vue'
+
 export default {
-  name: 'App'
+    data() {
+        return {
+            isLoading: true,
+            isError: false,
+        }
+    },
+    components: {
+        loaderSquare: LoaderSquare,
+    },
+    methods: {
+        ...mapActions('stocks', ['handleFetchData']),
+        async getStuff() {
+            try {
+                await this.handleFetchData()
+                this.isLoading = false
+            } catch (err) {
+                console.log('ERR:', err)
+                this.isError = true
+            }
+        },
+    },
+    created() {
+        console.log(process.env.VUE_APP_API_URL)
+        this.getStuff()
+    },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.slide-leave-active {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    animation: slide-out 0.2s ease-out forwards;
+}
+
+.slide-leave {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-enter-active {
+    animation: slide-in 0.2s ease-out forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 </style>
